@@ -1,0 +1,59 @@
+# ACTS Test Suite Generation: Wed Jan 31 18:12:54 CET 2024
+#  '*' represents don't care value 
+# Degree of interaction coverage: 3
+# Number of parameters: 3
+# Maximum number of values per parameter: 6
+# Number of configurations: 52
+Name,type,birthdate
+Valda,bird,1.1.1990
+Valda,bird,10.10.2000
+Valda,cat,1.1.1990
+Valda,cat,10.10.2000
+Valda,dog,1.1.1990
+Valda,dog,10.10.2000
+Valda,hamster,1.1.1990
+Valda,hamster,10.10.2000
+Valda,lizard,1.1.1990
+Valda,lizard,10.10.2000
+Valda,snake,1.1.1990
+Valda,snake,10.10.2000
+null,bird,1.1.1990
+empty,bird,1.1.1990
+null,bird,10.10.2000
+empty,bird,10.10.2000
+Valda,bird,40.40.2000
+Valda,bird,null
+null,cat,1.1.1990
+empty,cat,1.1.1990
+null,cat,10.10.2000
+empty,cat,10.10.2000
+Valda,cat,40.40.2000
+Valda,cat,null
+null,dog,1.1.1990
+empty,dog,1.1.1990
+null,dog,10.10.2000
+empty,dog,10.10.2000
+Valda,dog,40.40.2000
+Valda,dog,null
+null,hamster,1.1.1990
+empty,hamster,1.1.1990
+null,hamster,10.10.2000
+empty,hamster,10.10.2000
+Valda,hamster,40.40.2000
+Valda,hamster,null
+null,lizard,1.1.1990
+empty,lizard,1.1.1990
+null,lizard,10.10.2000
+empty,lizard,10.10.2000
+Valda,lizard,40.40.2000
+Valda,lizard,null
+null,snake,1.1.1990
+empty,snake,1.1.1990
+null,snake,10.10.2000
+empty,snake,10.10.2000
+Valda,snake,40.40.2000
+Valda,snake,null
+Valda,null,1.1.1990
+Valda,null,10.10.2000
+Valda,empty,1.1.1990
+Valda,empty,10.10.2000

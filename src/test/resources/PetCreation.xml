@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<System name="PetCreation">
+  <Parameters>
+    <Parameter id="0" name="Name" type="1">
+      <values>
+        <value>Valda</value>
+      </values>
+      <basechoices />
+      <invalidValues>
+        <invalidValue>null</invalidValue>
+        <invalidValue>empty</invalidValue>
+      </invalidValues>
+    </Parameter>
+    <Parameter id="1" name="type" type="1">
+      <values>
+        <value>bird</value>
+        <value>cat</value>
+        <value>dog</value>
+        <value>hamster</value>
+        <value>lizard</value>
+        <value>snake</value>
+      </values>
+      <basechoices />
+      <invalidValues>
+        <invalidValue>null</invalidValue>
+        <invalidValue>empty</invalidValue>
+      </invalidValues>
+    </Parameter>
+    <Parameter id="2" name="birthdate" type="1">
+      <values>
+        <value>1.1.1990</value>
+        <value>10.10.2000</value>
+      </values>
+      <basechoices />
+      <invalidValues>
+        <invalidValue>40.40.2000</invalidValue>
+        <invalidValue>null</invalidValue>
+      </invalidValues>
+    </Parameter>
+  </Parameters>
+  <OutputParameters />
+  <Relations>
+    <Relation Strength="1" Default="false">
+      <Parameter name="type">
+        <value>bird</value>
+        <value>cat</value>
+        <value>dog</value>
+        <value>hamster</value>
+        <value>lizard</value>
+        <value>snake</value>
+      </Parameter>
+    </Relation>
+    <Relation Strength="1" Default="false">
+      <Parameter name="birthdate">
+        <value>1.1.1990</value>
+        <value>10.10.2000</value>
+      </Parameter>
+    </Relation>
+  </Relations>
+  <Constraints />
+  <Testset doi="-1">
+    <Testcase TCNo="0">
+      <Value>1</Value>
+      <Value>Valda</Value>
+      <Value>bird</Value>
+      <Value>10.10.2000</Value>
+    </Testcase>
+    <Testcase TCNo="1">
+      <Value>2</Value>
+      <Value>Valda</Value>
+      <Value>cat</Value>
+      <Value>1.1.1990</Value>
+    </Testcase>
+    <Testcase TCNo="2">
+      <Value>3</Value>
+      <Value>Valda</Value>
+      <Value>dog</Value>
+      <Value>10.10.2000</Value>
+    </Testcase>
+    <Testcase TCNo="3">
+      <Value>4</Value>
+      <Value>Valda</Value>
+      <Value>hamster</Value>
+      <Value>10.10.2000</Value>
+    </Testcase>
+    <Testcase TCNo="4">
+      <Value>5</Value>
+      <Value>Valda</Value>
+      <Value>lizard</Value>
+      <Value>1.1.1990</Value>
+    </Testcase>
+    <Testcase TCNo="5">
+      <Value>6</Value>
+      <Value>Valda</Value>
+      <Value>snake</Value>
+      <Value>1.1.1990</Value>
+    </Testcase>
+    <Testcase TCNo="6">
+      <Value>7</Value>
+      <Value>Valda</Value>
+      <Value>null</Value>
+      <Value>1.1.1990</Value>
+    </Testcase>
+    <Testcase TCNo="7">
+      <Value>8</Value>
+      <Value>Valda</Value>
+      <Value>empty</Value>
+      <Value>1.1.1990</Value>
+    </Testcase>
+    <Testcase TCNo="8">
+      <Value>9</Value>
+      <Value>Valda</Value>
+      <Value>dog</Value>
+      <Value>40.40.2000</Value>
+    </Testcase>
+    <Testcase TCNo="9">
+      <Value>10</Value>
+      <Value>Valda</Value>
+      <Value>bird</Value>
+      <Value>null</Value>
+    </Testcase>
+    <Testcase TCNo="10">
+      <Value>11</Value>
+      <Value>null</Value>
+      <Value>dog</Value>
+      <Value>1.1.1990</Value>
+    </Testcase>
+    <Testcase TCNo="11">
+      <Value>12</Value>
+      <Value>empty</Value>
+      <Value>dog</Value>
+      <Value>1.1.1990</Value>
+    </Testcase>
+  </Testset>
+  <Header>
+    <Value />
+    <Value>NAME</Value>
+    <Value>TYPE</Value>
+    <Value>BIRTHDATE</Value>
+  </Header>
+  <Stat-Data>
+    <ExecutionTime>0.237</ExecutionTime>
+    <MaxDomainSize>6</MaxDomainSize>
+    <MinDomainSize>1</MinDomainSize>
+    <TotalNoOfCombination>17</TotalNoOfCombination>
+    <TotalNoOfTests>12</TotalNoOfTests>
+    <Algorithm>IPOG</Algorithm>
+  </Stat-Data>
+</System>
+

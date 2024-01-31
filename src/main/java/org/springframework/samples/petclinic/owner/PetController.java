@@ -39,7 +39,7 @@ import jakarta.validation.Valid;
  */
 @Controller
 @RequestMapping("/owners/{ownerId}")
-class PetController {
+public class PetController {
 
 	private static final String VIEWS_PETS_CREATE_OR_UPDATE_FORM = "pets/createOrUpdatePetForm";
 
@@ -104,8 +104,28 @@ class PetController {
 		}
 
 		LocalDate currentDate = LocalDate.now();
+		//change to fix it
+		if (pet.getType().getName() == null )
+		{
+			result.rejectValue("type", "cannot be null");
+		}
+		else
+		{
+			if (pet.getType() != null && pet.getType().getName().isBlank())
+			{
+				result.rejectValue("type", "cannot be null");
+			}
+		}
+		if (pet.getBirthDate() == null) {
+			result.rejectValue("birthDate", "cannot be null");
+		}
+		// end of change
 		if (pet.getBirthDate() != null && pet.getBirthDate().isAfter(currentDate)) {
 			result.rejectValue("birthDate", "typeMismatch.birthDate");
+		}
+
+		if (!StringUtils.hasText(pet.getName()) || pet.getName().isBlank()) {
+			result.rejectValue("name", "empty", "must be filled");
 		}
 
 		owner.addPet(pet);
@@ -113,6 +133,11 @@ class PetController {
 			model.put("pet", pet);
 			return VIEWS_PETS_CREATE_OR_UPDATE_FORM;
 		}
+
+		if (pet.getBirthDate() == null) {
+			result.rejectValue("birthDate", "cannot be nullNull");
+		}
+
 
 		this.owners.save(owner);
 		return "redirect:/owners/{ownerId}";
@@ -152,5 +177,6 @@ class PetController {
 		this.owners.save(owner);
 		return "redirect:/owners/{ownerId}";
 	}
+
 
 }

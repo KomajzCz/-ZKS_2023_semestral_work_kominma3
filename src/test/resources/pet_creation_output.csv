@@ -1,0 +1,45 @@
+# ACTS Test Suite Generation: Wed Jan 31 17:11:59 CET 2024
+#  '*' represents don't care value 
+# Degree of interaction coverage: 2
+# Number of parameters: 3
+# Maximum number of values per parameter: 6
+# Number of configurations: 38
+Name,type,birthdate
+Valda,bird,10.10.2000,true
+Valda,cat,10.10.2000,true
+Valda,dog,10.10.2000,true
+Valda,hamster,10.10.2000,true
+Valda,lizard,10.10.2000,true
+Valda,snake,10.10.2000,true
+Valda,null,10.10.2000,false
+Valda,empty,10.10.2000,false
+Valda,bird,1.1.1990,false
+Valda,cat,1.1.1990,false
+Valda,dog,1.1.1990,false
+Valda,hamster,1.1.1990,false
+Valda,lizard,1.1.1990,false
+Valda,snake,1.1.1990,false
+Valda,bird,40.40.2000,false
+Valda,cat,40.40.2000,false
+Valda,dog,40.40.2000,false
+Valda,hamster,40.40.2000,false
+Valda,lizard,40.40.2000,false
+Valda,snake,40.40.2000,false
+Valda,bird,null,false
+Valda,cat,null,false
+Valda,dog,null,false
+Valda,hamster,null,false
+Valda,lizard,null,false
+Valda,snake,null,false
+null,bird,10.10.2000,false
+null,cat,10.10.2000,false
+null,dog,10.10.2000,false
+null,hamster,10.10.2000,false
+null,lizard,10.10.2000,false
+null,snake,10.10.2000,false
+empty,bird,10.10.2000,false
+empty,cat,10.10.2000,false
+empty,dog,10.10.2000,false
+empty,hamster,10.10.2000,false
+empty,lizard,10.10.2000,false
+empty,snake,10.10.2000,false
