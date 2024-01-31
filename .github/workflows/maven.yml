@@ -28,6 +28,9 @@ jobs:
             ./mvnw -B package
   test:
       runs-on: ubuntu-latest
+      strategy:
+        matrix:
+          java: [ '17' ]
       needs: build
       steps:
           - uses: actions/checkout@v4
