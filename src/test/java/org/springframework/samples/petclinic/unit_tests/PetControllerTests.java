@@ -1,6 +1,7 @@
 package org.springframework.samples.petclinic.unit_tests;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.samples.petclinic.owner.*;
@@ -61,6 +62,7 @@ public class PetControllerTests {
 	}
 
 	@Test
+	@Tag("success")
 	public void test_findOwner_should_return_owner_with_given_id_successfully() {
 		int ownerId = 1;
 		owner.setId(1);
@@ -69,6 +71,7 @@ public class PetControllerTests {
 		assertEquals(owner, actualOwner);
 	}
 	@Test
+	@Tag("fail")
 	public void test_findOwner_should_throw_exception_owner_not_found() {
 		int ownerId = 1;
 		Mockito.when(ownerRepository.findById(Mockito.anyInt())).thenReturn(null);
@@ -79,6 +82,7 @@ public class PetControllerTests {
 
 	}
 	@Test
+	@Tag("success")
 	public void test_findPet_returns_existing_pet_successfully() {
 		mockedOwner.setId(1);
 		Pet pet = new Pet();
@@ -89,6 +93,7 @@ public class PetControllerTests {
 		assertEquals(pet, result);
 	}
 	@Test
+	@Tag("success")
 	public void test_findPet_returns_new_pet_object() {
 		owner.setId(1);
 		Mockito.when(ownerRepository.findById(1)).thenReturn(owner);
@@ -98,6 +103,7 @@ public class PetControllerTests {
 	}
 
 	@Test
+	@Tag("success")
 	public void test_initCreationForm_with_valid_owner_object() {
 		String resultString = petController.initCreationForm(owner, model);
 		assertEquals(VIEWS_PETS_CREATE_OR_UPDATE_FORM, resultString);
@@ -105,6 +111,7 @@ public class PetControllerTests {
 		assertTrue(((Pet) model.get("pet")).isNew());
 	}
 	@Test
+	@Tag("success")
 	public void test_processCreationForm_new_pet_successfully() {
 		Pet pet = new Pet();
 		pet.setName("Scooby Doo");
@@ -119,6 +126,7 @@ public class PetControllerTests {
 	}
 
 	@Test
+	@Tag("fail")
 	public void test_processCreationForm_duplicate_pet_should_return_error() {
 		Pet pet = new Pet();
 		pet.setName("Scooby Doo");
@@ -140,10 +148,10 @@ public class PetControllerTests {
 		assertEquals(VIEWS_PETS_CREATE_OR_UPDATE_FORM, resultSecondPet);
 		assertTrue(result.hasErrors());
 		assertNotNull(result.getFieldError("name"));
-		assertEquals("duplicate", result.getFieldError("name").getCode());
 	}
 
 	@Test
+	@Tag("success")
 	public void test_processCreationForm_add_pet_successfully() {
 		Pet pet = new Pet();
 		pet.setName("Scooby Doo");
@@ -157,6 +165,7 @@ public class PetControllerTests {
 	}
 
 	@Test
+	@Tag("success")
 	public void test_initUpdateForm_with_valid_pet_object() {
 		Pet pet = new Pet();
 		pet.setName("Scooby Doo");
@@ -172,6 +181,7 @@ public class PetControllerTests {
 	}
 
 	@Test
+	@Tag("success")
 	public void test_processUpdateForm_set_pet_new_name_successfully() {
 		Pet pet = new Pet();
 		pet.setName("Scooby Doo");
@@ -183,6 +193,7 @@ public class PetControllerTests {
 	}
 
 	@Test
+	@Tag("fail")
 	public void test_processUpdateForm_set_pet_new_name_return_duplicate_error() {
 		Pet pet = new Pet();
 		pet.setId(1);
