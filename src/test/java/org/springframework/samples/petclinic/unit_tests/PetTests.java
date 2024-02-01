@@ -15,12 +15,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class PetTests {
+
 	private Validator createValidator() {
 		LocalValidatorFactoryBean localValidatorFactoryBean = new LocalValidatorFactoryBean();
 		localValidatorFactoryBean.afterPropertiesSet();
 		return localValidatorFactoryBean;
 	}
-
 
 	@Test
 	public void test_create_new_pet_with_valid_inputs_successfully() {
@@ -42,6 +42,7 @@ public class PetTests {
 		assertEquals(petType, pet.getType());
 		assertEquals(LocalDate.now(), pet.getBirthDate());
 	}
+
 	@Test
 	public void test_addVisit_with_valid_visit_successfully() {
 		Pet pet = new Pet();
@@ -54,6 +55,5 @@ public class PetTests {
 		// Assert that pet contains required visit
 		assertTrue(pet.getVisits().contains(visit));
 	}
-
 
 }

@@ -1,6 +1,5 @@
 package org.springframework.samples.petclinic.parametrized_test;
 
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
@@ -16,6 +15,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 
 public class PetCreationTestParametrized {
+
 	private static final String VIEWS_PETS_CREATE_OR_UPDATE_FORM = "pets/createOrUpdatePetForm";
 
 	private String parseInput(String input) {
@@ -41,12 +41,10 @@ public class PetCreationTestParametrized {
 		PetType inputPetType = new PetType();
 
 		String parsedType = parseInput(type);
-		if(parsedType != null)
-		{
+		if (parsedType != null) {
 			inputPetType.setName(parsedType);
 		}
-		else
-		{
+		else {
 			inputPetType.setName(null);
 		}
 
@@ -61,7 +59,7 @@ public class PetCreationTestParametrized {
 				pet.setBirthDate(new_date);
 			}
 			catch (Exception e) {
-                Assertions.assertFalse(correct);
+				Assertions.assertFalse(correct);
 				return;
 			}
 		}
@@ -78,4 +76,3 @@ public class PetCreationTestParametrized {
 	}
 
 }
-

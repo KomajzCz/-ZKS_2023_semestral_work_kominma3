@@ -104,15 +104,12 @@ public class PetController {
 		}
 
 		LocalDate currentDate = LocalDate.now();
-		//change to fix it
-		if (pet.getType().getName() == null )
-		{
+		// change to fix it
+		if (pet.getType().getName() == null) {
 			result.rejectValue("type", "cannot be null");
 		}
-		else
-		{
-			if (pet.getType() != null && pet.getType().getName().isBlank())
-			{
+		else {
+			if (pet.getType() != null && pet.getType().getName().isBlank()) {
 				result.rejectValue("type", "cannot be null");
 			}
 		}
@@ -137,7 +134,6 @@ public class PetController {
 		if (pet.getBirthDate() == null) {
 			result.rejectValue("birthDate", "cannot be nullNull");
 		}
-
 
 		this.owners.save(owner);
 		return "redirect:/owners/{ownerId}";
@@ -177,6 +173,5 @@ public class PetController {
 		this.owners.save(owner);
 		return "redirect:/owners/{ownerId}";
 	}
-
 
 }

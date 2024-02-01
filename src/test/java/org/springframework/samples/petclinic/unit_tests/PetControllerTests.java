@@ -30,7 +30,6 @@ public class PetControllerTests {
 
 	private ModelMap model;
 
-
 	private OwnerRepository ownerRepository;
 
 	private PetController petController;
@@ -70,6 +69,7 @@ public class PetControllerTests {
 		Owner actualOwner = petController.findOwner(ownerId);
 		assertEquals(owner, actualOwner);
 	}
+
 	@Test
 	@Tag("fail")
 	public void test_findOwner_should_throw_exception_owner_not_found() {
@@ -81,6 +81,7 @@ public class PetControllerTests {
 		assertEquals("Owner ID not found: " + ownerId, e.getMessage());
 
 	}
+
 	@Test
 	@Tag("success")
 	public void test_findPet_returns_existing_pet_successfully() {
@@ -92,6 +93,7 @@ public class PetControllerTests {
 		Pet result = petController.findPet(1, 1);
 		assertEquals(pet, result);
 	}
+
 	@Test
 	@Tag("success")
 	public void test_findPet_returns_new_pet_object() {
@@ -110,6 +112,7 @@ public class PetControllerTests {
 		assertNotNull(model.get("pet"));
 		assertTrue(((Pet) model.get("pet")).isNew());
 	}
+
 	@Test
 	@Tag("success")
 	public void test_processCreationForm_new_pet_successfully() {
@@ -136,7 +139,7 @@ public class PetControllerTests {
 		pet.setType(petType);
 		String resultFirstPet = petController.processCreationForm(mockedOwner, pet, result, model);
 		Mockito.when(mockedOwner.getPet(Mockito.anyString(), Mockito.anyBoolean())).thenReturn(pet);
-		//Create another pet with same name
+		// Create another pet with same name
 		Pet newPet = new Pet();
 		newPet.setName("Scooby Doo");
 		newPet.setBirthDate(LocalDate.now());
@@ -215,19 +218,5 @@ public class PetControllerTests {
 		assertEquals(VIEWS_PETS_CREATE_OR_UPDATE_FORM, resultString);
 		assertTrue(result.hasErrors());
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

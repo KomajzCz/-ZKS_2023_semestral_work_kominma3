@@ -35,6 +35,7 @@ public class PetValidatorTests {
 		validator.validate(pet, errors);
 		assertFalse(errors.hasErrors());
 	}
+
 	@Test
 	public void test_validate_pet_with_empty_name_should_throw_error() {
 		pet.setBirthDate(LocalDate.now());
@@ -56,6 +57,7 @@ public class PetValidatorTests {
 		assertEquals(1, errors.getErrorCount());
 		assertTrue(errors.hasFieldErrors("type"));
 	}
+
 	@Test
 	public void test_validate_pet_with_null_birthdate_should_throw_error() {
 		pet.setName("Scooby Doo");
@@ -65,4 +67,5 @@ public class PetValidatorTests {
 		assertEquals(1, errors.getErrorCount());
 		assertTrue(errors.hasFieldErrors("birthDate"));
 	}
+
 }
